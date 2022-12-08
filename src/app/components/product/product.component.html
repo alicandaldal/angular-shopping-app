@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-lg-3" *ngFor="let product of products">
+        <div class="form-group text-center">
+        <img src="{{product.imageUrl}}" style="width:200px; height: 200px;">
+        <h4>{{product.name}}</h4>
+        <h5>{{product.price}}</h5>
+        <input type="number" class="form-control" value="1">
+        <button class="btn btn-primary mt-2" (click)="addBasket(product)">Sepete ekle</button>
+    </div>
+    </div>
+</div>
+
