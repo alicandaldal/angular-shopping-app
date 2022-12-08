@@ -7,6 +7,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { ProductComponent } from './components/product/product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -17,10 +19,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     BasketComponent,
     PaymentComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

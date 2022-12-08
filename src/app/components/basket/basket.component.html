@@ -11,19 +11,19 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+        <tr *ngFor="let subBasket of basket">
+            <td>{{ subBasket.product.id }}</td>
+            <td>{{ subBasket.product.name }}</td>
+            <td>{{ subBasket.quantity }}</td>
+            <td>{{ (subBasket.quantity * subBasket.product.price)|currency:'₺' }}</td>
+            <td><button (click)="deleteProductFromBasket(subBasket)" class="btn btn-danger">SİL</button></td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
             <th></th>
             <th></th>
-            <th>Toplam</th>
+            <th>Toplam: {{ total|currency:'₺' }}</th>
             <th></th>
             <th></th>
         </tr>
