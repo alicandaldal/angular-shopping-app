@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProcessService} from "../../services/process.service";
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor() { }
+  searchText: string;
+  constructor(private processService: ProcessService) { }
 
   ngOnInit(): void {
+  }
+
+  searchProduct(){
+    this.processService.filterProducts(this.searchText);
   }
 
 }
